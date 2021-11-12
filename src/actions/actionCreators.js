@@ -112,9 +112,6 @@ export const fetchServices = () => async (dispatch) => {
 
 export const fetchEditableService = (id) => async (dispatch) => {
   dispatch(fetchEditableServiceRequest());
-
-  // //id
-  // const {serviceEdit: {service: {id}}} = getState();
   try {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/${id}`);
     if (!response.ok) {
@@ -129,8 +126,6 @@ export const fetchEditableService = (id) => async (dispatch) => {
 
 export const saveService = (service) => async (dispatch) => {
   dispatch(saveServiceRequest());
-  // //service
-  // const {serviceSave: {service}} = getState();
   try {
     const response = await fetch(`${process.env.REACT_APP_API_URL}`, {
       method: 'POST',
